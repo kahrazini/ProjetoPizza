@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Desafio da Pizza</title>
+        
+    </head>
+    <body>
+        <div class="fundo">
+
+        
+            <form action="Formatos de Pizzas">
+                <div>
+                <input type="radio" name="nmFormatoPizza" id="idBroto" checked>
+                <label for="idBroto">Broto</label>
+                </div>
+                <div>
+                <input type="radio" name="nmFormatoPizza" id="idBaby">
+                <label for="idBaby">Baby</label>
+                </div>
+                <div>
+                <input type="radio" name="nmFormatoPizza" id="idPequena">
+                <label for="idPequena">Pequena</label>
+                </div>
+                <div>
+                <input type="radio" name="nmFormatoPizza" id="idMedia">
+                <label for="idMedia">Média</label>
+                </div>
+                <div>
+                <input type="radio" name="nmFormatoPizza" id="idGrande">
+                <label for="idGrande">Grande</label>
+                </div>
+                <div>
+                <input type="radio" name="nmFormatoPizza" id="idExagerada">
+                <label for="idExagerada">Exagerada</label>
+                </div>
+                <div>
+                <input type="radio" name="nmFormatoPizza" id="idGigante">
+                <label for="idGigante">Gigante</label>
+                </div>
+                <div>    
+                <label for="idMedidas" id="idMedidas">Tamanho da Pizza:</label><br>
+                <input type="number" id="idMedidas" name="nmMedidas" step="0.01">
+                </div>
+                <div>
+                <label for="idPreco" id="idPreco">Preço:</label><br>
+                <input type="number" id="idPreco" name="nmPreco" step="0.01">
+                </div>
+
+                <output id="idOut">Relatório:</output>
+                <br><br>
+                <input type="button" id="idsalvar" value="Salvar Informações" onclick="salvarInfos()">
+                <input type="button" id="idrelatorio" value="Relatório" onclick="emitirBeneficio()">
+
+            </form>
+        </div>
+        <script>
+            //todas as variavéis
+            var formatos = [];
+            var medidas = [];
+            var precos = [];
+            var beneficio = [];
+            var salvar = document.getElementById("idsalvar")
+            var relatorio = document.getElementById("idrelatorio")
+
+
+
+
+        </script>
+
+    </body>
+</html>
