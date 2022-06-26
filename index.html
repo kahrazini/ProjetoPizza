@@ -5,6 +5,28 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Desafio da Pizza</title>
+        <style>
+            .fundo{
+                height: 100vh;
+                color: black;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                font-size: 135%;
+                text-align: center;
+                background-image: linear-gradient(gray, rgb(109, 230, 109));
+            }
+
+            .classfieldset {
+            width: 40%;
+            margin: auto;
+            padding-left: 50px;
+            padding-right: 50px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            background-color: rgb(111, 162, 111);
+            border-radius: 15px;
+        }
+
+        </style>
         
     </head>
     <body>
@@ -12,11 +34,11 @@
 
         
             <form action="">
-                <fieldset>
-                    <legend>Escolha a Pizza com melhor Custo!</legend>
+                <fieldset class="classfieldset">
+                    <legend>A BUSCA PELA MELHOR PIZZA</legend>
     
                     <!-- Caixa de seleção -->
-                    <label for="idPizzas">Pizza:</label><br>
+                    <label for="idPizzas">PIZZA</label><br>
                     <select name="nmPizzas" id="idPizzas" size="2" multiple>
                         <option value="broto">Broto</option>
                         <option value="baby">Baby</option>
@@ -28,15 +50,15 @@
                     </select>
     
                     <div>    
-                    <label for="idMedidas" id="idMedidas">Tamanho da Pizza:</label><br>
+                    <label for="idMedidas">TAMANHO</label><br>
                     <input type="number" id="idMedidas" name="nmMedidas" step="0.01">
                     </div>
                     <div>
-                    <label for="idPreco" id="idPreco">Preço:</label><br>
+                    <label for="idPreco">PREÇO</label><br>
                     <input type="number" id="idPreco" name="nmPreco" step="0.01">
                     </div>
         
-                    <output id="idOut">Relatório:</output>
+                    <output id="idOut">RELATÓRIO</output>
                     <br><br>
                     <input type="button" id="idsalvar" value="Salvar Informações" onclick="salvarInfos()">
                     <input type="button" id="idrelatorio" value="Relatório" onclick="emitirBeneficio()">
@@ -48,15 +70,37 @@
         </div>
         <script>
             //todas as variavéis
-            var formatos = [];
-            var medidas = [];
-            var precos = [];
-            var beneficio = [];
-            var salvar = document.getElementById("idsalvar")
-            var relatorio = document.getElementById("idrelatorio")
+            var pizzas = [];
 
 
+            function salvarInfos() {
+                let tipo = document.getElementById("idPizzas").value,
+                    medida = document.getElementById("idMedidas").value,
+                    raio = medida/2,
+                    preco = document.getElementById("idPreco").value,
+                    precoPorCm = preco / (Math.PI * (raio * raio));
 
+                pizzas[tipo] = {'tipo': tipo, 'medida': medida, 'preco':preco, 'precoPorCm': precoPorCm};
+                console.log(pizzas);
+            }
+
+            function emitirBeneficio() {
+                pizzas = pizzas.sort(function(a,b) {
+                    if(a.precoPorCm < b.precoPorCm) {
+                        return -1;
+                    }
+
+                    if(a.precoPorCm > b.precoPorCm) {
+                        return 1;
+                    }
+
+                    return 0;
+                })
+
+                console.log(pizzas)
+
+                
+            }
 
         </script>
 
