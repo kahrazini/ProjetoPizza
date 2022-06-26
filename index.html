@@ -11,50 +11,40 @@
         <div class="fundo">
 
         
-            <form action="Formatos de Pizzas">
-                <div>
-                <input type="radio" name="nmFormatoPizza" id="idBroto" checked>
-                <label for="idBroto">Broto</label>
-                </div>
-                <div>
-                <input type="radio" name="nmFormatoPizza" id="idBaby">
-                <label for="idBaby">Baby</label>
-                </div>
-                <div>
-                <input type="radio" name="nmFormatoPizza" id="idPequena">
-                <label for="idPequena">Pequena</label>
-                </div>
-                <div>
-                <input type="radio" name="nmFormatoPizza" id="idMedia">
-                <label for="idMedia">Média</label>
-                </div>
-                <div>
-                <input type="radio" name="nmFormatoPizza" id="idGrande">
-                <label for="idGrande">Grande</label>
-                </div>
-                <div>
-                <input type="radio" name="nmFormatoPizza" id="idExagerada">
-                <label for="idExagerada">Exagerada</label>
-                </div>
-                <div>
-                <input type="radio" name="nmFormatoPizza" id="idGigante">
-                <label for="idGigante">Gigante</label>
-                </div>
-                <div>    
-                <label for="idMedidas" id="idMedidas">Tamanho da Pizza:</label><br>
-                <input type="number" id="idMedidas" name="nmMedidas" step="0.01">
-                </div>
-                <div>
-                <label for="idPreco" id="idPreco">Preço:</label><br>
-                <input type="number" id="idPreco" name="nmPreco" step="0.01">
-                </div>
-
-                <output id="idOut">Relatório:</output>
-                <br><br>
-                <input type="button" id="idsalvar" value="Salvar Informações" onclick="salvarInfos()">
-                <input type="button" id="idrelatorio" value="Relatório" onclick="emitirBeneficio()">
-
+            <form action="">
+                <fieldset>
+                    <legend>Escolha a Pizza com melhor Custo!</legend>
+    
+                    <!-- Caixa de seleção -->
+                    <label for="idPizzas">Pizza:</label><br>
+                    <select name="nmPizzas" id="idPizzas" size="2" multiple>
+                        <option value="broto">Broto</option>
+                        <option value="baby">Baby</option>
+                        <option value="Pequena">Pequena</option>
+                        <option value="Média">Média</option>
+                        <option value="Grande">Grande</option>
+                        <option value="Gigante">Gigante</option>
+                        <option value="Gigante">Exagerada</option>
+                    </select>
+    
+                    <div>    
+                    <label for="idMedidas" id="idMedidas">Tamanho da Pizza:</label><br>
+                    <input type="number" id="idMedidas" name="nmMedidas" step="0.01">
+                    </div>
+                    <div>
+                    <label for="idPreco" id="idPreco">Preço:</label><br>
+                    <input type="number" id="idPreco" name="nmPreco" step="0.01">
+                    </div>
+        
+                    <output id="idOut">Relatório:</output>
+                    <br><br>
+                    <input type="button" id="idsalvar" value="Salvar Informações" onclick="salvarInfos()">
+                    <input type="button" id="idrelatorio" value="Relatório" onclick="emitirBeneficio()">
+    
+                </fieldset>
+    
             </form>
+
         </div>
         <script>
             //todas as variavéis
